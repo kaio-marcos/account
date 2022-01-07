@@ -1,5 +1,27 @@
-{
-  "username": "joaofran",
-  "email": "user@mail.com",
-  "password": "1234567"
-}
+[
+  {
+    "username":"Cacau 1",
+    "email":"cacau1@email.com",
+    "password":"cacau"
+  },
+  {
+    "username":"Leite 2",
+    "email":"leite@email.com",
+    "password":"leite"
+  },
+  {
+    "username":"Pão 3",
+    "email":"pao@email.com",
+    "password":"pao"
+  },
+  {
+    "username":"Maionese 4",
+    "email":"maionese@email.com",
+    "password":"maionese"
+  },
+  {
+    "username":"Azeitona 5",
+    "email":"azeitona@email.com",
+    "password":"azeitona"
+  }
+]
