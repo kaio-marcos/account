@@ -1,9 +1,12 @@
 package com.pingr.accounts.Account;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
 
 @Entity
 @Table
+@JsonSerialize
 public class Account {
     @Id
     @SequenceGenerator(

@@ -4,6 +4,7 @@ import com.pingr.accounts.Account.exceptions.InvalidAccountCreationException;
 import com.pingr.accounts.Account.exceptions.InvalidAccountUpdateException;
 import com.pingr.accounts.Account.exceptions.InvalidArgumentsException;
 import com.pingr.accounts.Account.exceptions.InvalidFindAccountException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,6 +60,7 @@ public class AccountService {
             if(account.getPassword() != null)
                 accountUpdate.setPassword(account.getPassword());
             accountRepository.save(accountUpdate);
+            producerService.sendUpdateMessage(accountUpdate);
             return accountUpdate;
         }catch (Exception ex){
             throw new InvalidAccountUpdateException("Falha ao atualizar 'Account' ");
@@ -76,6 +78,7 @@ public class AccountService {
 
             Account account = accountFind.get();
             accountRepository.delete(account);
+            producerService.sendDeleteMessage(account);
             return id;
         }catch (Exception ex){
             throw new InvalidAccountUpdateException("Falha ao deletar 'Account' ");
